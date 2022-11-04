@@ -105,19 +105,11 @@ def user_inputs_prediction():
 predict_button = st.button('Predict')
 
 
-
 if predict_button:
-    price = round(float(user_inputs_prediction()))
-    st.subheader('{} Thousand Egyptian Pounds'.format(price))
-    st.success('Good Job')
-
-
-
-#if predict_button:
- #   try :
-  #      price = round(float(user_inputs_prediction()))
-   #     st.subheader('{} Thousand Egyptian Pounds'.format(price))
-    #    st.success('Good Job')
-   # except:
-    #    st.warning('Warning: Something went wrong, Please check entered data')
+    try :
+        price = round(float(user_inputs_prediction()))
+        st.subheader('{} Thousand Egyptian Pounds'.format(price))
+        st.success('Good Job')
+    except:
+        st.warning('Warning: Something went wrong, Please check entered data')
 
