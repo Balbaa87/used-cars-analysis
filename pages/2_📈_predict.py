@@ -9,10 +9,10 @@ st.title('Predict cars price in Egyptian Market')
 st.write(''' On this page, I am using a machine learning model to predict the price of any car according to data entered by the user. Data has been scraped from the website [Hatla2e](https://eg.hatla2ee.com/en)
 The dataset contains **31,194** used car Ads, each ad. Consists of a description of the car brand, model, date of the Ad., model year, traveled kilometers, color, and price.
 Dataset has been cleaned and wrangled. Outliers have been removed and finally, the best machine-learning model has been selected.
-''')
 
-st.write(''' **Note:** I have made every effort to ensure the accuracy and reliability the machine learning model. However,
-  I don’t give any kind of warranty and am not responsible for any decision taken by the user.''' )
+''')
+st.write(' **Note:** ')
+st.write('''I have made every effort to ensure the accuracy and reliability of the machine learning model.This model is using **Random Forest** algorithm with an accuracy of **92%** based on the R-Squared evaluation metric.  However, I don’t give any kind of warranty and am not responsible for any decision taken by the user.''' )
 
 st.sidebar.image('Photo.png',width=60)
 st.sidebar.subheader('Developed by [Amr Balbaa](https://www.linkedin.com/in/amr-balbaa/)')
