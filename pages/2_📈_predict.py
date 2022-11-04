@@ -15,7 +15,7 @@ st.write(''' **Note:** I have made every effort to ensure the accuracy and relia
   I don’t give any kind of warranty and am not responsible for any decision taken by the user.''' )
 
 st.sidebar.image('Photo.png',width=60)
-st.sidebar.subheader('Developed by [Amr Balbaa](www.linkedin.com/in/amr-balbaa)')
+st.sidebar.subheader('Developed by [Amr Balbaa](https://www.linkedin.com/in/amr-balbaa/)')
 st.sidebar.write('If you have any constructive feedback please reach out to this email amr.balbaa@gmail.com or click this [link](www.linkedin.com/in/amr-balbaa)')
 
 
@@ -102,7 +102,7 @@ def user_inputs_prediction():
 
 
 # Prediction button
-predict_button = col1.button('Predict')
+predict_button = st.button('Predict')
 
 
 
