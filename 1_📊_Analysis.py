@@ -12,7 +12,7 @@ st.set_page_config(page_title='Used cars in Egyptian Market',page_icon=':car:'
 
 
 st.sidebar.image('Photo.png',width=60)
-st.sidebar.subheader('Developed by [Amr Balbaa](www.linkedin.com/in/amr-balbaa)')
+st.sidebar.subheader('Developed by [Amr Balbaa](https://www.linkedin.com/in/amr-balbaa/)')
 st.sidebar.write('If you have any constructive feedback please reach out to this email amr.balbaa@gmail.com or click this [link](www.linkedin.com/in/amr-balbaa)')
 
 
@@ -201,7 +201,7 @@ st.write('---')
 ##########################################################################################
 st.subheader('Thank You :pray:')
 
-st.write('Dashboard created by [Amr Balbaa](www.linkedin.com/in/amr-balbaa)')
+st.write('Dashboard created by [Amr Balbaa](https://www.linkedin.com/in/amr-balbaa/)')
 
 st.write('''I have made every effort to ensure the accuracy and reliability
  of the information on this dashboard and the machine learning model. However,
