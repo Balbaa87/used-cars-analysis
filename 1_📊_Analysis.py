@@ -8,7 +8,7 @@ df = pd.read_csv('cars_cleaned_data.csv',index_col=0)
 
 
 st.set_page_config(page_title='Used cars in Egyptian Market',page_icon=':car:'
-                    ,layout="centered", initial_sidebar_state='auto' )
+                    ,layout="centered", initial_sidebar_state='expanded' )
 
 
 st.sidebar.image('Photo.png',width=60)
@@ -66,15 +66,46 @@ st.subheader('Check which cars you can get with your budget')
 low_range = st.number_input(' From')
 high_range = st.number_input('To')
 st.info('Prices in Thousand Egyptian Pound')
+
+
 # Fig3
-price_model = pd.DataFrame(df.groupby(['brand','model']).mean()['price(Thousand)'])
-price_model.reset_index(level=1,inplace=True)
-price_model.reset_index(level=0,inplace=True)
-table1 = price_model[(price_model['price(Thousand)']>low_range) & (price_model['price(Thousand)']<high_range)]
-table1['model'] = table1['brand'] + ' ' + table1['model']
-table1.drop('brand',axis=1,inplace=True)
-st.dataframe(table1,width=2000)
+str_year_df = df.copy()
+str_year_df['year'] = str_year_df['year'].apply(lambda x : str(x))
+str_year_df = pd.DataFrame(df.groupby(['brand','model','year']).mean()['price(Thousand)'])
+str_year_df.reset_index(level=[0,1,2],inplace=True)
+str_year_df['year'] = str_year_df['year'].apply(lambda x : str(x))
+str_year_df['model_year'] =  str_year_df['brand'] + ' ' + str_year_df['model'] + '-' + str_year_df['year']
+
+table2 = str_year_df.groupby(['model_year','brand']).mean()
+table2.reset_index(level=[0,1],inplace=True)
+
+
+
+all_or_brand = st.radio('Select brand',('Show All Brands','Select One Brand'))
+if all_or_brand == 'Show All Brands':
+    result = table2[(table2['price(Thousand)']>low_range) & (table2['price(Thousand)']<high_range)]
+
+if all_or_brand == 'Select One Brand':
+
+    price_filter = table2[(table2['price(Thousand)']>low_range) & (table2['price(Thousand)']<high_range)]
+    brand_filter = st.selectbox('Select car model',price_filter['brand'].unique())
+    result = table2[(table2['price(Thousand)']>low_range) & (table2['price(Thousand)']<high_range)&(table2['brand']== brand_filter)]
+
+
+result.drop('brand',axis=1,inplace=True)
+st.dataframe(result,width=2000)
+
 st.write('---')
+
+######################################################################
+#price_model = pd.DataFrame(df.groupby(['brand','model']).mean()['price(Thousand)'])
+#price_model.reset_index(level=1,inplace=True)
+#price_model.reset_index(level=0,inplace=True)
+#table1 = price_model[(price_model['price(Thousand)']>low_range) & (price_model['price(Thousand)']<high_range)]
+#table1['model'] = table1['brand'] + ' ' + table1['model']
+#table1.drop('brand',axis=1,inplace=True)
+#st.dataframe(table1,width=2000)
+#st.write('---')
 ##########################################################################################
 # Model Price all over 4 months from 22/6/2022 to 22/10/2022
 # Fig7
