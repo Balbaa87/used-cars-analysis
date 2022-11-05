@@ -13,7 +13,7 @@ st.set_page_config(page_title='Used cars in Egyptian Market',page_icon=':car:'
 
 st.sidebar.image('Photo.png',width=60)
 st.sidebar.subheader('Developed by [Amr Balbaa](https://www.linkedin.com/in/amr-balbaa/)')
-st.sidebar.write('If you have any constructive feedback please reach out to this email amr.balbaa@gmail.com or click this [link](www.linkedin.com/in/amr-balbaa)')
+st.sidebar.write('If you have any constructive feedback please reach out to this email amr.balbaa@gmail.com or click this [link](https://www.linkedin.com/in/amr-balbaa/)')
 
 
 
