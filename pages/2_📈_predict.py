@@ -16,7 +16,7 @@ st.write('''I have made every effort to ensure the accuracy and reliability of t
 
 st.sidebar.image('Photo.png',width=60)
 st.sidebar.subheader('Developed by [Amr Balbaa](https://www.linkedin.com/in/amr-balbaa/)')
-st.sidebar.write('If you have any constructive feedback please reach out to this email amr.balbaa@gmail.com or click this [link](www.linkedin.com/in/amr-balbaa)')
+st.sidebar.write('If you have any constructive feedback please reach out to this email amr.balbaa@gmail.com or click this [link](https://www.linkedin.com/in/amr-balbaa/)')
 
 
 
